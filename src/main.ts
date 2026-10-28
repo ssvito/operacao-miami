@@ -1,6 +1,8 @@
 import './style.css';
 import { registerSW } from 'virtual:pwa-register';
 import { GameLoop } from './game-loop.ts';
+import { Shell } from './shell.ts';
+import { Gabinete } from './phases/gabinete.ts';
 
 /**
  * Virtual resolution, portrait 9:16. The world is drawn here, then integer-scaled to the
@@ -16,42 +18,42 @@ world.width = VIRTUAL_W;
 world.height = VIRTUAL_H;
 const wctx = world.getContext('2d')!;
 
+/** Where the world lands on the display, device pixels. Shared by render and input. */
+const view = { scale: 1, offsetX: 0, offsetY: 0, dpr: 1 };
+
 function fit(): void {
-  const dpr = window.devicePixelRatio || 1;
-  display.width = Math.floor(window.innerWidth * dpr);
-  display.height = Math.floor(window.innerHeight * dpr);
+  view.dpr = window.devicePixelRatio || 1;
+  display.width = Math.floor(window.innerWidth * view.dpr);
+  display.height = Math.floor(window.innerHeight * view.dpr);
   ctx.imageSmoothingEnabled = false;
+  // Fractional only when the window is smaller than the virtual screen itself.
+  const fitScale = Math.min(display.width / VIRTUAL_W, display.height / VIRTUAL_H);
+  view.scale = fitScale >= 1 ? Math.floor(fitScale) : fitScale;
+  view.offsetX = Math.floor((display.width - VIRTUAL_W * view.scale) / 2);
+  view.offsetY = Math.floor((display.height - VIRTUAL_H * view.scale) / 2);
 }
 window.addEventListener('resize', fit);
 fit();
 
-let t = 0;
+const shell = new Shell([(run) => new Gabinete(run)], VIRTUAL_W, VIRTUAL_H);
 
-function update(dtMs: number): void {
-  t += dtMs;
+function onPointer(kind: 'down' | 'move' | 'up') {
+  return (e: PointerEvent): void => {
+    const x = (e.clientX * view.dpr - view.offsetX) / view.scale;
+    const y = (e.clientY * view.dpr - view.offsetY) / view.scale;
+    shell.pointer(kind, x, y);
+  };
 }
+display.addEventListener('pointerdown', onPointer('down'));
+display.addEventListener('pointermove', onPointer('move'));
+display.addEventListener('pointerup', onPointer('up'));
 
-function render(): void {
-  wctx.fillStyle = '#10202a';
-  wctx.fillRect(0, 0, VIRTUAL_W, VIRTUAL_H);
-  wctx.fillStyle = '#f2c14e';
-  wctx.font = '16px monospace';
-  wctx.textAlign = 'center';
-  wctx.fillText('OPERAÇÃO', VIRTUAL_W / 2, 140);
-  wctx.fillText('MIAMI', VIRTUAL_W / 2, 158);
-  if (Math.floor(t / 500) % 2 === 0) {
-    wctx.font = '8px monospace';
-    wctx.fillStyle = '#e8e8e8';
-    wctx.fillText('em construção', VIRTUAL_W / 2, 180);
-  }
-
-  const scale = Math.max(1, Math.floor(Math.min(display.width / VIRTUAL_W, display.height / VIRTUAL_H)));
-  const w = VIRTUAL_W * scale;
-  const h = VIRTUAL_H * scale;
+function render(alpha: number): void {
+  shell.render(wctx, alpha);
   ctx.fillStyle = '#000';
   ctx.fillRect(0, 0, display.width, display.height);
-  ctx.drawImage(world, Math.floor((display.width - w) / 2), Math.floor((display.height - h) / 2), w, h);
+  ctx.drawImage(world, view.offsetX, view.offsetY, VIRTUAL_W * view.scale, VIRTUAL_H * view.scale);
 }
 
 registerSW({ immediate: true });
-new GameLoop(update, render).start();
+new GameLoop((dt) => shell.update(dt), render).start();
