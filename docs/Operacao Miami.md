@@ -17,3 +17,4 @@ Sátira política em pixel art, PWA instalável para desktop e celular. O person
 - [Design](./Design/Design.md) - premissa, fases, mecânicas, tom.
 - [Roadmap](./Roadmap.md) - ordem de construção.
 - [Log](./Log/Log.md) - histórico datado, por mês.
+- [Repo & Deploy](./Repo%20&%20Deploy.md) - repo, Pages, ícones.

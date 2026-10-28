@@ -26,4 +26,4 @@ Parte de [Operação Miami](./Operacao%20Miami.md).
 - [x] Tela de fim com exposição final e veredito.
 - [ ] Jogar a run inteira no celular e ajustar a barra acumulada.
 - [ ] Criar o repo no GitHub e ligar o Pages.
-- [ ] Ícones PNG 192/512 para instalação no Android/iOS.
+- [x] Ícones PNG 192/512 para instalação no Android/iOS.
