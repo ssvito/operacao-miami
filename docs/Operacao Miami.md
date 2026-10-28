@@ -8,9 +8,9 @@ target:
 
 Sátira política em pixel art, PWA instalável para desktop e celular. O personagem (caricatura de senador) precisa sair de Brasília e chegar à Flórida. Mesma stack do ICE Breaker: TypeScript puro + Canvas, sem framework.
 
-**Status**: scaffold - loop de jogo com timestep fixo, canvas em resolução virtual 320x180 com escala inteira, manifest e service worker.
+**Status**: scaffold - loop de jogo com timestep fixo, canvas retrato 180x320 com escala inteira, manifest e service worker. Cada fase é um minigame diferente atrás de um contrato comum.
 
-**Next**: decidir o gênero do núcleo (ver [Design](./Design/Design.md)) e fazer a primeira fase jogável.
+**Next**: a shell de fases e a primeira fase jogável (ver [Roadmap](./Roadmap.md)).
 
 ## Sub-notas
 

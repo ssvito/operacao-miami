@@ -2,9 +2,12 @@ import './style.css';
 import { registerSW } from 'virtual:pwa-register';
 import { GameLoop } from './game-loop.ts';
 
-/** Virtual resolution. The world is drawn here, then integer-scaled to the window. */
-const VIRTUAL_W = 320;
-const VIRTUAL_H = 180;
+/**
+ * Virtual resolution, portrait 9:16. The world is drawn here, then integer-scaled to the
+ * window; on a landscape desktop it simply letterboxes.
+ */
+const VIRTUAL_W = 180;
+const VIRTUAL_H = 320;
 
 const display = document.querySelector<HTMLCanvasElement>('#game')!;
 const ctx = display.getContext('2d')!;
@@ -34,11 +37,12 @@ function render(): void {
   wctx.fillStyle = '#f2c14e';
   wctx.font = '16px monospace';
   wctx.textAlign = 'center';
-  wctx.fillText('OPERAÇÃO MIAMI', VIRTUAL_W / 2, 80);
+  wctx.fillText('OPERAÇÃO', VIRTUAL_W / 2, 140);
+  wctx.fillText('MIAMI', VIRTUAL_W / 2, 158);
   if (Math.floor(t / 500) % 2 === 0) {
     wctx.font = '8px monospace';
     wctx.fillStyle = '#e8e8e8';
-    wctx.fillText('em construção', VIRTUAL_W / 2, 100);
+    wctx.fillText('em construção', VIRTUAL_W / 2, 180);
   }
 
   const scale = Math.max(1, Math.floor(Math.min(display.width / VIRTUAL_W, display.height / VIRTUAL_H)));

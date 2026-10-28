@@ -17,7 +17,8 @@ export default defineConfig({
         theme_color: '#10202a',
         background_color: '#10202a',
         display: 'fullscreen',
-        orientation: 'any',
+        // Portrait is the primary layout: every phase is designed for a phone held upright.
+        orientation: 'portrait',
         icons: [{ src: 'icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }],
       },
     }),

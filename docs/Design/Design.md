@@ -25,7 +25,8 @@ O personagem decide que "tá na hora de umas férias longas" e precisa ir de Bra
 - **Itens**: boné + óculos escuros (disfarce), "nota oficial" (anula um escândalo uma vez), celular do assessor (distração).
 - **Colecionáveis**: recortes de jornal fictícios, estilo charge.
 
-## Em aberto
+## Estrutura (decidido 2026-10-27)
 
-- Núcleo único (só stealth top-down) ou uma coleção de minigames por fase, estilo WarioWare.
-- Retrato ou paisagem como layout primário no celular.
+- **Cada fase é um minigame diferente**, com regras próprias. A shell só conhece o contrato `Minigame` (`src/minigame.ts`): título, dica de uma linha, `update`, `render`, `pointer` e `outcome`. Antes de cada fase aparece um cartão com título e dica ("Fuja!", "Disfarce!").
+- **Retrato é o layout primário.** Resolução virtual 180x320 (9:16), escala inteira; no desktop vira letterbox. Todo controle tem que caber no polegar: toque, arrasto e swipe, sem teclado obrigatório.
+- A Barra de Exposição na Mídia é o fio que atravessa as fases: cada minigame pode enchê-la, e ela vai junto para a fase seguinte.
