@@ -17,5 +17,7 @@ Parte de [Operação Miami](./Operacao%20Miami.md).
 - [ ] Ajustar a fase 1 no celular: velocidade, alcance dos cones, taxa de exposição.
 - [x] Fase 2 (Orla): runner na orla, três faixas.
 - [ ] Ajustar a fase 2 no celular, e a soma das duas fases na barra.
-- [ ] Fase 3 (Aeroporto): minigame de burocracia.
+- [x] Fase 3 (Aeroporto): fila, raio-X e formulário.
+- [ ] Ajustar a fase 3 no celular (texto de 5px no raio-X é o primeiro suspeito).
+- [ ] Fase 4 (Voo).
 - [ ] Ícones PNG 192/512 para instalação no Android/iOS.

@@ -14,7 +14,10 @@ O personagem decide que "tá na hora de umas férias longas" e precisa ir de Bra
 
 1. **Gabinete em Brasília** - stealth: sair do Senado sem ser visto por repórteres (pilastras, caixas de "documentos importantes", comitivas).
 2. **Orla** - runner vertical em três faixas no calçadão de ondas, rolando sozinho por ~30s. Tocar à esquerda/direita troca de faixa. Ambulante (+15) fica parado; ciclista (+20) desce contra você mais rápido que a rolagem; apoiador (+25, flash de selfie) mostra um `!` e dá um passo para a sua faixa quando você chega perto; o carro de som passa devagar pela avenida e, enquanto está ao lado, a faixa da direita enche a barra. Toda fileira deixa pelo menos uma faixa livre. Seed fixa: a corrida é sempre a mesma, para dar para aprender.
-3. **Aeroporto** - minigame de burocracia: fila, raio-X, mala que apita, formulário infinito.
+3. **Aeroporto** - três etapas seguidas, cada uma com um gesto diferente:
+   - **Fila** (segurar): 5 passageiros à frente; de vez em quando um mostra `?` e vira para trás. Segurar a tela levanta o jornal, mas a fila só anda com o dedo solto. Visto sem jornal: 60/s.
+   - **Raio-X** (tocar): a esteira desce com 10 itens; tocar tira o item para a bandeja. Metal que chega ao scanner apita (+15); tirar algo inofensivo também é suspeito (+5). Ferro de passar, panela, halteres e martelo apitam; travesseiro, chinelo, rapadura, boné, protetor e pandeiro não.
+   - **Formulário** (escolher): 5 declarações SIM/NÃO com 4,5s cada; a graça é a redação com dupla negação ("Sua viagem NÃO é a turismo?"). Errar ou estourar o tempo: +12.
 4. **Voo** - passageiro reconhece e começa a filmar: fingir dormir, se esconder atrás do cardápio, trocar de assento.
 5. **Imigração** - diálogo de múltipla escolha; respostas erradas levam a finais cômicos (deportado, Canadá).
 6. **Final** - chega em Miami e o quarto de hóspedes já está ocupado pelo irmão.

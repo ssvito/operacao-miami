@@ -1,5 +1,6 @@
 import { MAX_EXPOSURE } from './minigame.ts';
 import type { Minigame, PhaseFactory, Run } from './minigame.ts';
+import { text, wrap } from './draw.ts';
 
 type Mode = 'title' | 'card' | 'playing' | 'result' | 'end';
 
@@ -152,29 +153,4 @@ export class Shell {
       if (this.modeTime >= TAP_GUARD_MS) text(ctx, 'toque para tentar de novo', cx, 200, 7, '#e8e8e8');
     }
   }
-}
-
-function text(ctx: CanvasRenderingContext2D, s: string, x: number, y: number, size: number, color: string): void {
-  ctx.fillStyle = color;
-  ctx.font = `${size}px monospace`;
-  ctx.textAlign = 'center';
-  ctx.fillText(s, x, y);
-}
-
-/** Centered text broken on spaces to fit `maxWidth`. */
-function wrap(ctx: CanvasRenderingContext2D, s: string, x: number, y: number, size: number, color: string, maxWidth: number): void {
-  ctx.font = `${size}px monospace`;
-  const lines: string[] = [];
-  let line = '';
-  for (const word of s.split(' ')) {
-    const next = line ? `${line} ${word}` : word;
-    if (line && ctx.measureText(next).width > maxWidth) {
-      lines.push(line);
-      line = word;
-    } else {
-      line = next;
-    }
-  }
-  if (line) lines.push(line);
-  lines.forEach((l, i) => text(ctx, l, x, y + i * (size + 2), size, color));
 }

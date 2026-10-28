@@ -1,6 +1,7 @@
 import { MAX_EXPOSURE } from '../minigame.ts';
 import type { Minigame, Run } from '../minigame.ts';
 import { drawSenator } from '../draw.ts';
+import { rng } from '../random.ts';
 
 type Kind = 'ambulante' | 'ciclista' | 'fa';
 
@@ -39,17 +40,6 @@ const TRUCK_REACH = 42;
 const LOUD_PER_SEC = 45;
 /** Fixed seed: the same run every time, so it can be learned and simulated. */
 const SEED = 0x5eed;
-
-/** Tiny seeded PRNG (mulberry32). */
-function rng(seed: number): () => number {
-  let a = seed;
-  return () => {
-    a = (a + 0x6d2b79f5) | 0;
-    let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
 
 export class Orla implements Minigame {
   readonly title = 'ORLA';
