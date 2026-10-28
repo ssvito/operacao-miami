@@ -18,7 +18,7 @@ O personagem decide que "tá na hora de umas férias longas" e precisa ir de Bra
    - **Fila** (segurar): 5 passageiros à frente; de vez em quando um mostra `?` e vira para trás. Segurar a tela levanta o jornal, mas a fila só anda com o dedo solto. Visto sem jornal: 60/s.
    - **Raio-X** (tocar): a esteira desce com 10 itens; tocar tira o item para a bandeja. Metal que chega ao scanner apita (+15); tirar algo inofensivo também é suspeito (+5). Ferro de passar, panela, halteres e martelo apitam; travesseiro, chinelo, rapadura, boné, protetor e pandeiro não.
    - **Formulário** (escolher): 5 declarações SIM/NÃO com 4,5s cada; a graça é a redação com dupla negação ("Sua viagem NÃO é a turismo?"). Errar ou estourar o tempo: +12.
-4. **Voo** - passageiro reconhece e começa a filmar: fingir dormir, se esconder atrás do cardápio, trocar de assento.
+4. **Voo** (arrastar) - cabine vista de cima, 8 fileiras de 2+2 com corredor, 7 assentos vazios. A cada 3,2s (caindo para 1,8s) um passageiro saca o celular: `?` e a área tracejada por 1,1s, depois `REC` por 3,5s. Selfie grava para trás, então a área é as 2 fileiras atrás dele, do lado dele, corredor incluído (30/s). Arrastar (ou tocar) até um assento vazio: o senador vai pelo corredor, e andar por área gravando também conta. Até 1 câmera no começo, 3 no fim; o voo dura 28s, de GIG a MIA. Fingir dormir e o cardápio ficaram de fora; o carrinho de bordo bloqueando o corredor é a ideia que sobrou.
 5. **Imigração** - diálogo de múltipla escolha; respostas erradas levam a finais cômicos (deportado, Canadá).
 6. **Final** - chega em Miami e o quarto de hóspedes já está ocupado pelo irmão.
 
