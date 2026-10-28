@@ -6,6 +6,7 @@ import { Gabinete } from './phases/gabinete.ts';
 import { Orla } from './phases/orla.ts';
 import { Aeroporto } from './phases/aeroporto.ts';
 import { Voo } from './phases/voo.ts';
+import { Imigracao } from './phases/imigracao.ts';
 
 /**
  * Virtual resolution, portrait 9:16. The world is drawn here, then integer-scaled to the
@@ -38,7 +39,7 @@ function fit(): void {
 window.addEventListener('resize', fit);
 fit();
 
-const shell = new Shell([(run) => new Gabinete(run), (run) => new Orla(run), (run) => new Aeroporto(run), (run) => new Voo(run)], VIRTUAL_W, VIRTUAL_H);
+const shell = new Shell([(run) => new Gabinete(run), (run) => new Orla(run), (run) => new Aeroporto(run), (run) => new Voo(run), (run) => new Imigracao(run)], VIRTUAL_W, VIRTUAL_H);
 
 function onPointer(kind: 'down' | 'move' | 'up') {
   return (e: PointerEvent): void => {

@@ -21,5 +21,6 @@ Parte de [Operação Miami](./Operacao%20Miami.md).
 - [ ] Ajustar a fase 3 no celular (texto de 5px no raio-X é o primeiro suspeito).
 - [x] Fase 4 (Voo): trocar de assento fugindo de quem filma.
 - [ ] Jogar as 4 fases em sequência no celular e decidir se a barra precisa de alívio entre fases.
-- [ ] Fase 5 (Imigração).
+- [x] Fase 5 (Imigração): diálogo em inglês com finais próprios.
+- [ ] Fase 6 (Final).
 - [ ] Ícones PNG 192/512 para instalação no Android/iOS.
