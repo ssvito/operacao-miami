@@ -15,5 +15,7 @@ Parte de [Operação Miami](./Operacao%20Miami.md).
 - [x] Fase 1 jogável (Gabinete): arrastar o personagem entre esconderijos, um repórter com cone de visão.
 - [x] Tela inicial com aviso de paródia.
 - [ ] Ajustar a fase 1 no celular: velocidade, alcance dos cones, taxa de exposição.
-- [ ] Fase 2 (Rio): runner na orla.
+- [x] Fase 2 (Orla): runner na orla, três faixas.
+- [ ] Ajustar a fase 2 no celular, e a soma das duas fases na barra.
+- [ ] Fase 3 (Aeroporto): minigame de burocracia.
 - [ ] Ícones PNG 192/512 para instalação no Android/iOS.

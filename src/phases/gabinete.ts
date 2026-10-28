@@ -1,5 +1,6 @@
 import { MAX_EXPOSURE } from '../minigame.ts';
 import type { Minigame, Run } from '../minigame.ts';
+import { drawSenator } from '../draw.ts';
 
 interface Point {
   x: number;
@@ -156,7 +157,7 @@ export class Gabinete implements Minigame {
       }
     }
 
-    this.drawPlayer(ctx);
+    drawSenator(ctx, this.player.x, this.player.y, this.hidden() ? 0.55 : 1);
     for (const r of this.reporters) this.drawReporter(ctx, r);
 
     if (this.target) {
@@ -206,19 +207,5 @@ export class Gabinete implements Minigame {
     const a = this.facing(r);
     ctx.fillStyle = '#222';
     ctx.fillRect(Math.round(r.x + Math.cos(a) * 6) - 1, Math.round(r.y + Math.sin(a) * 6) - 1, 3, 3);
-  }
-
-  private drawPlayer(ctx: CanvasRenderingContext2D): void {
-    const { x, y } = this.player;
-    ctx.globalAlpha = this.hidden() ? 0.55 : 1;
-    ctx.fillStyle = '#1d2b4f';
-    ctx.fillRect(x - 4, y - 4, 8, 10);
-    ctx.fillStyle = '#f2c14e';
-    ctx.fillRect(x - 1, y - 3, 2, 5);
-    ctx.fillStyle = '#e0b48a';
-    ctx.fillRect(x - 3, y - 10, 6, 6);
-    ctx.fillStyle = '#3b2a1e';
-    ctx.fillRect(x - 3, y - 11, 6, 2);
-    ctx.globalAlpha = 1;
   }
 }
