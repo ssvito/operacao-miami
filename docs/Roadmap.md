@@ -22,5 +22,8 @@ Parte de [Operação Miami](./Operacao%20Miami.md).
 - [x] Fase 4 (Voo): trocar de assento fugindo de quem filma.
 - [ ] Jogar as 4 fases em sequência no celular e decidir se a barra precisa de alívio entre fases.
 - [x] Fase 5 (Imigração): diálogo em inglês com finais próprios.
-- [ ] Fase 6 (Final).
+- [x] Fase 6 (Miami): encher o colchão inflável, fechar a cortina que o irmão abre.
+- [x] Tela de fim com exposição final e veredito.
+- [ ] Jogar a run inteira no celular e ajustar a barra acumulada.
+- [ ] Criar o repo no GitHub e ligar o Pages.
 - [ ] Ícones PNG 192/512 para instalação no Android/iOS.

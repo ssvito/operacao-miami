@@ -100,8 +100,11 @@ export class Shell {
         if (this.mode === 'result') this.drawResult(ctx);
         break;
       case 'end':
-        text(ctx, 'CONTINUA...', cx, 140, 16, '#f2c14e');
-        text(ctx, 'Próximas fases em construção.', cx, 166, 7, '#e8e8e8');
+        text(ctx, 'FIM', cx, 110, 16, '#f2c14e');
+        text(ctx, 'Chegou a Miami.', cx, 136, 8, '#e8e8e8');
+        text(ctx, 'Dormiu no colchão inflável.', cx, 148, 7, '#e8e8e8');
+        text(ctx, `Exposição final: ${Math.round(this.run.exposure)}%`, cx, 176, 8, '#e8e8e8');
+        text(ctx, endVerdict(this.run.exposure), cx, 192, 7, '#3fa34d');
         if (this.blink()) text(ctx, 'toque para voltar', cx, 240, 8, '#3fa34d');
         break;
     }
@@ -153,4 +156,12 @@ export class Shell {
       if (this.modeTime >= TAP_GUARD_MS) text(ctx, 'toque para tentar de novo', cx, 200, 7, '#e8e8e8');
     }
   }
+}
+
+/** One line on the end screen, by how much of the trip made the news. */
+function endVerdict(exposure: number): string {
+  if (exposure < 1) return 'Ninguém ficou sabendo.';
+  if (exposure < 40) return 'Saiu uma notinha de rodapé.';
+  if (exposure < 75) return 'Virou assunto no grupo da família.';
+  return 'Foi parar em todos os jornais.';
 }
